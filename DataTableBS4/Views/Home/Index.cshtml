@@ -1,0 +1,54 @@
+﻿@model List<Person>
+@{
+    ViewData["Title"] = "Client Side";
+}
+
+<h1>Person Records</h1>
+<table id="tableClient" class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Birth Date</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var person in Model)
+        {
+            <tr>
+                <td>@person.Id</td>
+                <td>@person.Name</td>
+                <td>@person.Age</td>
+                <td>@person.BirthDate.ToShortDateString()</td>
+                <td>@person.Height.ToString("0.00")</td>
+                <td>@person.Weight.ToString("0.00")</td>
+                <td>@person.Gender</td>
+                <td>@person.Address</td>
+                <td>@person.Email</td>
+                <td>
+                    <button class="btn btn-sm btn-primary btn-edit">Edit</button>
+                    <button class="btn btn-sm btn-danger btn-delete">Delete</button>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@section Scripts {
+    <script src="~/lib/datatables@2.0.7/js/dataTables.js"></script>
+    <script src="~/lib/datatables@2.0.7/js/dataTables.bootstrap4.js"></script>
+    <script src="~/js/person.js" asp-append-version="true"></script>
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/lib/datatables@2.0.7/css/dataTables.bootstrap4.css" />
+}

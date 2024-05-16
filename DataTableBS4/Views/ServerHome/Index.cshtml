@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "Server Side";
+}
+
+<h1>Person Records</h1>
+<table id="tableServer" class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Birth Date</th>
+            <th>Height</th>
+            <th>Weight</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+
+@section Scripts {
+    <script src="~/lib/datatables@2.0.7/js/dataTables.js"></script>
+    <script src="~/lib/datatables@2.0.7/js/dataTables.bootstrap4.js"></script>
+    <script src="~/js/person.js" asp-append-version="true"></script>
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/lib/datatables@2.0.7/css/dataTables.bootstrap4.css" />
+}
